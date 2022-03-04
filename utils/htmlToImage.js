@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer"
 export const htmlToImage = async(html)=>{
-const browser = await puppeteer.launch();
+const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
 const page = await browser.newPage();
 await page.setViewport({
     width: 1000,
