@@ -1,0 +1,74 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.small_text{
+  font-size: 14px;
+  line-height: 20px;
+}
+.medium_text{
+  font-size: 18px;
+  line-height: 24px;
+}
+.large_text{
+  font-size: 24px;
+  line-height: 28px;
+}
+.my_8{
+  margin:8px 0;
+}
+.danger{
+  color:#f52866;
+}
+.quote-container{
+  padding:20px;
+  flex-direction: column;
+  display: flex;
+  
+  max-width: 700px;
+  margin:50px auto;
+}
+.Polaris-ColorPicker {
+  margin-bottom:20px;
+}
+.Polaris-ColorPicker .Polaris-ColorPicker__MainColor{
+  width:100%;
+}
+.quote-input{
+  margin:10px;
+}
+.main-head{
+  font-size:50px;
+  line-height: 60px;
+  text-align: center;
+  margin:20px;
+}
+
+.preview{
+  width:100%;
+  min-height: 200px;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  line-height: 50px;
+  border-radius: 10px;
+  padding:10px;
+  margin:20px 0;
+  text-align: center;
+}
+
