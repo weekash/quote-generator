@@ -8,7 +8,7 @@ class QuoteController {
     generateImage = async(req, res) => {
         const { quote, color } = req.body;
         if(!quote || !color){
-            res.status(400).json({error:'Either Color or Quote is missing. Please try again.'});
+            return res.status(400).json({error:'Either Color or Quote is missing. Please try again.'});
         }
         const file = getQuoteTemplate(color, quote);
         await htmlToImage(file)

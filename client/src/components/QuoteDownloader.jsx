@@ -19,24 +19,25 @@ export default function QuoteDownloader() {
   const colorChange = (color) => {
     setColor(color)
   }
-  useEffect(()=>{
+  useEffect(() => {
     setError('')
-  },[color, quote])
+  }, [color, quote])
 
-  const callDownloadApi = () => {
+  const callDownloadApi = async () => {
     const textColor = `hsla(${hue},${saturation * 100}%,${brightness * 100}%,${alpha})`;
     setLoading(true);
+
     axios('/api/generate', {
       method: 'POST',
       data: { color: textColor, quote },
-      responseType:'blob'
+      responseType: 'blob'
     }).then((res) => {
-      console.log(res)
-        FileDownload(res.data, 'quote.png')
-    }).catch((err) => {
-        setError(err.response?.data?.error || '')
+      FileDownload(res.data, `quote-${new Date().getTime()}.png`)
+    }).catch((error) => {
+    if(error.response.status===400)
+      setError('Either color or quote is missing')
     }).finally(() => {
-        setLoading(false)
+      setLoading(false)
     })
 
 
